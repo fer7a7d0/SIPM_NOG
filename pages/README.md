@@ -1,1 +1,1 @@
-Inventario diario
+# Inventario diario
