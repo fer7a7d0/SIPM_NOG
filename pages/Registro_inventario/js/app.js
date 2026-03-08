@@ -897,7 +897,7 @@ document.addEventListener('DOMContentLoaded', generarOpcionesDatalist);
 
 
 /* ============================================================
-   🔹 8. SUBMIT DEL FORMULARIO (CREATE / UPDATE)
+   🔹 8. SUBMIT DEL FORMULARIO (MODIFICADO)
 ============================================================ */
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -906,7 +906,7 @@ form.addEventListener('submit', (event) => {
     const area = areaInput.value;
     const code = codeInput.value;
     const product = productInput.value;
-    const tt = ttInput.value;
+    const tt = ttInput.value.split(' - ')[0]; // Extraer solo el código
     const cylinders = cylindersInput.value;
     const currentDate = new Date().toLocaleDateString('en-CA'); // Formato ISO (YYYY-MM-DD)
 
@@ -925,7 +925,7 @@ form.addEventListener('submit', (event) => {
             record.area = area;
             record.code = code;
             record.product = product;
-            record.tt = tt;
+            record.tt = tt; // Solo el código
             record.cylinders = cylinders;
 
             record.action = "update";
@@ -948,7 +948,6 @@ form.addEventListener('submit', (event) => {
         submitButton.textContent = 'Enviar';
     }
 
-
     /* =========================
        🔹 CREATE
     ========================= */
@@ -962,7 +961,7 @@ form.addEventListener('submit', (event) => {
             area,
             code,
             product,
-            tt,
+            tt, // Solo el código
             cylinders
         };
 
@@ -978,8 +977,6 @@ form.addEventListener('submit', (event) => {
     productInput.value = '';
     ttInput.value = '';
     cylindersInput.value = '';
-    
-
 });
 
 
@@ -1046,7 +1043,7 @@ function updateTable() {
 
 
 /* ============================================================
-   🔹 10. EDITAR REGISTRO
+   🔹 10. EDITAR REGISTRO (MODIFICADO)
 ============================================================ */
 function editRecord(id) {
 
@@ -1063,7 +1060,11 @@ function editRecord(id) {
     areaInput.value = record.area;
     codeInput.value = record.code;
     productInput.value = record.product;
-    ttInput.value = record.tt;
+
+    // Concatenar el código y la descripción para el campo TT
+    const descripcionMateriaPrima = materiasPrimas[record.tt] || "Descripción no encontrada";
+    ttInput.value = `${record.tt} - ${descripcionMateriaPrima}`;
+
     cylindersInput.value = record.cylinders;
 
     // Resaltar el formulario para indicar que está en modo edición
