@@ -1227,14 +1227,14 @@ downloadButton.addEventListener("click", () => {
    🔹 RELACIÓN DE MATERIAS PRIMAS
 ============================================================ */
 const materiasPrimas = {
+    "0": "GASES BARRIENTOS",
+    "MZ": "MEZCLAS",
     "211": "OXÍGENO",
     "212": "NITRÓGENO",
-    "213": "CO2",
+    "213": "BIOXIDO DE CARBONO",
     "214": "ARGÓN",
     "216": "HIDRÓGENO",
     "217": "HELIO",
-    "MZ": "MEZCLAS",
-    "0": "BARRIENTOS",
     "102": "ACETILENO",
 };
 
