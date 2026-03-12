@@ -781,9 +781,10 @@ const baseDatos = {
     3001581: { producto: "MEZCLA CRYO H2 40%, N2 BAL CIL B", tt: "0" },
     3001711: { producto: "MEZCLA C3H8 0.8%, AIRE BAL, CIL 16 AL", tt: "0" },
     3001722: { producto: "HELIO RMI 4.1M3", tt: "217" },
-    50643: { producto: "Pendiente", tt: "0" },
-    3001174: { producto: "Pendiente", tt: "0" },
- 
+    50643: { producto: "CO2 30% AR BALANCE", tt: "0" },
+    53491: { producto: "CRYO N2 2PPM /AR BAL", tt: "0" },
+    3001174: { producto: "MEZCLA H2O 75 PPM, N2 BAL. CIL. 30 AL", tt: "0" },
+    3002194: { producto: "MEZCLA NO2 100 PPM,N2 BAL.  CIL. 30AL", tt: "0" },
     
 
 };
